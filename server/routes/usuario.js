@@ -5,7 +5,7 @@ const _ = require('underscore');
 const { verificaToken } = require('../middlewares/autenticacion');
 const Usuario = require('../models/usuario');
 
-app.get('/usuario', [verificaToken], (req, res) => {
+app.get('/usuario', (req, res) => {
     Usuario.find()
         .exec((err, usuarios) => {
             if (err) {
